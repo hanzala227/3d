@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0%;
+        margin: 0%;
+    }
+    .page1{
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+    }
+    .page2{
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(58, 58, 58);
+    }
+#eagle{
+    position: fixed;
+    cursor: pointer;
+    width: 70vw;
+    height: 70vh;
+}
+</style>
+<body>
+<div class="page1">    <model-viewer id="eagle" src="animated_eagle.glb" autoplay camera-controls disable-zoom></model-viewer>
+</div>
+<div class="page2"></div>
+
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        gsap.to("#eagle",{
+            left:"62%",
+            top:"60%",
+            width:"30vw",
+            height:"40vh",
+            scrollTrigger:{
+                trigger:".page1",
+                scroller:"body",
+                start:"top 20%",
+            end:"top -120%",
+            scrub:true,
+            }
+        })
+    </script>
+</body>
+</html>
